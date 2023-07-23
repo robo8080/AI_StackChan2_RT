@@ -25,10 +25,10 @@ Google Cloud STTは、”MhageGH”さんの [esp32_CloudSpeech](https://github.
 
 * [ｽﾀｯｸﾁｬﾝ アールティVer. β版 (フルキット)](https://www.rt-shop.jp/index.php?main_page=product_info&products_id=4143/ "Title")<br>
 * [ｽﾀｯｸﾁｬﾝ アールティVer. β版 (M5なし)](https://www.rt-shop.jp/index.php?main_page=product_info&products_id=4144/ "Title")<br>
-<br>
-* M5なしの場合別途、M5Stack BasicかCore2<br>
-* [M5Stack用PDMマイクユニット](https://www.switch-science.com/products/6620?_pos=2&_sid=38aeec5c3&_ss=r/ "Title")（ｽﾀｯｸﾁｬﾝと音声で会話する場合）
 
+* M5なしの場合別途、M5Stack BasicかCore2<br>
+* [M5Stack用PDMマイクユニット](https://www.switch-science.com/products/6620?_pos=2&_sid=38aeec5c3&_ss=r/ "Title")（ｽﾀｯｸﾁｬﾝと音声で会話する場合）<br>
+<br>
 
 ### プログラムをビルドするのに必要な物 ###
 * VSCode<br>
