@@ -40,6 +40,9 @@ std::deque<String> chatHistory;
 #define VOICEVOX_APIKEY "SET YOUR VOICEVOX APIKEY"
 #define STT_APIKEY "SET YOUR STT APIKEY"
 
+//#define USE_INTERNAL_MIC // タカオ版でM5Stack Core2やS3で内蔵マイクを使いたい場合はコメントアウトする。
+
+
 #define USE_SERVO
 #ifdef USE_SERVO
 #if defined( ARDUINO_M5STACK_Core2 )
@@ -846,7 +849,11 @@ void setup()
 {
   auto cfg = M5.config();
   cfg.external_spk = true;    /// use external speaker (SPK HAT / ATOMIC SPK)
+#ifdef USE_INTERNAL_MIC
+  cfg.internal_mic = true;
+#else
   cfg.internal_mic = false;
+#endif
 //cfg.external_spk_detail.omit_atomic_spk = true; // exclude ATOMIC SPK
 //cfg.external_spk_detail.omit_spk_hat    = true; // exclude SPK HAT
 //cfg.output_power = true;
@@ -862,10 +869,14 @@ void setup()
      M5.In_I2C.release();
   
     auto mic_cfg = M5.Mic.config();
+    
+#if !defined(USE_INTERNAL_MIC)
     // 外部マイク(PDMUnit)なので設定を行う。
     mic_cfg.pin_ws = 33;      //白
     mic_cfg.pin_data_in = 32; //黄
     M5.Mic.config(mic_cfg);
+#endif
+
 #else
     M5.In_I2C.release();
   
